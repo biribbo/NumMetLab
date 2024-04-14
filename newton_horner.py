@@ -1,6 +1,3 @@
-from tokenize import Double
-
-
 def horner_from_newton(x_count, b_array, x_array, s) :
     p = b_array.pop()
     for i in range(x_count):
