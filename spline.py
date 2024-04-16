@@ -16,7 +16,6 @@ m = len(c) - 1
 
 result = spline(5)
 print(result)
-regex = re.sub("-?0.0% + ")
 
 for i in range(n):
     p = ""
@@ -24,7 +23,7 @@ for i in range(n):
     poly = "(x - {})".format(x[i])
     for j in range(m-1, -1, -1):
         p += " + " + str(c[j][i]) + poly + "^" + str(m - j)
-    p = p.replace("+ -", "-")
+    p = p.replace("+ -", "- ")
     p = p.replace("(x - 0)", "x")
     p = p.replace("^1", "")
     
