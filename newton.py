@@ -21,10 +21,11 @@ def newton_interpolation_polynomial(x, y):
             p += "(x - {})".format(x[j])
     return p
 
-wezly = int(input("Podaj ilość węzłów: "))
-x_array = []
-y_array = []
+# wezly = int(input("Podaj ilość węzłów: "))
+x_array = [1, 4, 9] # enter the data manually, input currently broken
+y_array = [1, 1/2, 1/3]
 
+'''
 for i in range(wezly):
     x = float(input("Podaj x_{}: ".format(i)))
     x_array.append(x)
@@ -32,6 +33,7 @@ for i in range(wezly):
 for i in range(wezly):
     y = float(input("Podaj y_{}: ".format(i)))
     y_array.append(x)
+'''
 
 result = newton_interpolation_polynomial(x_array, y_array)
 print(result)
