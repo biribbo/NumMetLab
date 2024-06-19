@@ -3,8 +3,8 @@ import numpy as np
 def polynomial_function(x, coeffs):
     return np.polyval(coeffs, x)
 
-x = np.array([0, 0.25, 0.5, 0.75, 1])
-y = np.array([1, 1.015625, 1.125, 1.421875, 2])
+x = np.array([1, 1.5, 2, 2.5, 3])
+y = np.array([2, 5.75, 11, 17.75, 26])
 
 # Złożona metoda trapezów
 def trapezoidal_rule(x, y):
@@ -20,7 +20,7 @@ def simpsons_rule(x, y):
     I = h / 3 * (y[0] + 2 * np.sum(y[2:n-1:2]) + 4 * np.sum(y[1:n:2]) + y[n])
     return I
 
-trapezoidal_rule = round(trapezoidal_rule(x, y), 2)
-simpsons_rule = round(simpsons_rule(x, y), 2)
+trapezoidal_rule = trapezoidal_rule(x, y)
+simpsons_rule = simpsons_rule(x, y)
 print (trapezoidal_rule)
 print (simpsons_rule)

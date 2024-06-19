@@ -1,6 +1,6 @@
 import numpy as np
 
-def newton_method(f, der_f, x0, tol=1e-8, max_iter=100):
+def newton_method(f, der_f, x0, tol=1e-5, max_iter=100):
     x = x0
     counter = 0
     for _ in range(max_iter):
@@ -13,7 +13,7 @@ def newton_method(f, der_f, x0, tol=1e-8, max_iter=100):
             return x, fx, counter
     raise ValueError("osiągnięto maksymalną liczbę iteracji")
 
-def bisection_method(f, a, b, tol=1e-3, max_iter=100):
+def bisection_method(f, a, b, tol=1e-5, max_iter=100):
     if f(a) * f(b) > 0:
         raise ValueError("brak różnych znaków na końcach przedziałów")
     
@@ -30,7 +30,7 @@ def bisection_method(f, a, b, tol=1e-3, max_iter=100):
             a = c
     raise ValueError("osiągnięto maksymalną liczbę iteracji")
 
-def secant_method(f, a, b, tol=1e-8, max_iter=100):
+def secant_method(f, a, b, tol=1e-5, max_iter=100):
     counter = 0
     for _ in range(max_iter):
         counter += 1
@@ -45,28 +45,28 @@ def secant_method(f, a, b, tol=1e-8, max_iter=100):
     raise ValueError("osiągnięto maksymalną liczbę iteracji")
 
 def f(x):
-    return x**3 - 7
+    return x**4 - 5**5
 
 def derivative(x):
-    return 3 * x ** 2
+    return 4 * x ** 3
 
-'''
-result = bisection_method(f, 1, 3)
+
+result = bisection_method(f, 5, 10)
 a = result[0]
 b = result[1]
 c = result[2]
 
 print(a, b, c)
 
-result = newton_method(f, derivative, 2)
+
+result = newton_method(f, derivative, 12)
 a = result[0]
 b = result[1]
 c = result[2]
 
 print(a, b, c)
 
-'''
-result = secant_method(f, 1, 2)
+result = secant_method(f, 5, 2)
 a = result[0]
 b = result[1]
 c = result[2]

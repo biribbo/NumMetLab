@@ -4,8 +4,8 @@ import math
 import re
 
 e = math.exp(1)
-x = np.array([3.0, 4.5, 7.0, 9.0])
-y = np.array([2.5, 1.0, 2.5, 0.5])
+x = np.array([1, 2, 3, 4])
+y = np.array([1, 1, 0, 10])
 
 spline = CubicSpline(x, y, bc_type='natural')
 rounded_coefficients = np.round(spline.c, decimals=5)
